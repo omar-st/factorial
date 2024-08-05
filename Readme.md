@@ -3,6 +3,7 @@
 This project produces easy to use functions for use in different fields of mathematics. In particular, for algebra, geometry, and calculus. Additionally, for analysis, combinatorics, and probability.
 
 This is a software library for performing mathematical calculations and manipulations in mostly geometric and calculus contexts. The project provides classes and functions for mathematical tasks.
+***
 
 **Goals:**
 
