@@ -22,7 +22,6 @@ class Quadratic:
         p = self.calc(self.inner())
         q = self.calc(-1*self.inner())
         #Uses both the + and - of inner() to return 2 solutions
-        self.x = (p, q)
         return (p, q)
         
 #For example
