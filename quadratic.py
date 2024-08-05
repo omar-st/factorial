@@ -27,36 +27,42 @@ class Cubic:
     #stores the values in the eq.
     def __init__(self, a, b, c, d=0):
         self.formula = f'{a}x^3 {b}x^2 {c}x {d} = 0'
-        self.a = a
-        self.b = b
-        self.c = c
-        self.d = d
+        self.a = 1
+        self.b = b/a
+        self.c = c/a
+        self.d = d/a
 
     def inner(self):
         a, b, c, d = self.a, self.b, self.c, self.d
-        b /= a; c /= a; d /= a
-        return ( 
-            -((b**3) / (27*a**3)) 
-            + ((b*c) / (6*a**2)) 
-            - (d/(2*a)) 
+        print(a, b, c, d)
+        val = ( 
+            -((b**3) / 27) 
+            + ((b*c) / 6) 
+            - (d/2) 
             )
+        print(val)
+        return val
 
     def diff(self):
         a, b, c = self.a, self.b, self.c
-        return (
-            c/(3*a) 
-            - (b**2)/(9*a**2)
+        print(a, b, c)
+        val = (
+            c/3 - (b**2)/9
             )
+        print(val)
+        return val
 
     def cube(self):
         a, b, c, d = self.a, self.b, self.c, self.d
         p, q = self.inner(), self.diff()
-        return (
-            (p - (p**2 + q**3)**0.5 )**(1/3)
-            + (p + (p**2 + q**3)**0.5 )**(1/3)
+        val = (
+            (p - (p**2 + q**3) **0.5) **(1/3)
+            + (p + (p**2 + q**3) **0.5) **(1/3)
             - b/(3*a)
             )
-      
+        print(val)
+        return val
+        
 eg = Cubic(1, -6, 11, -6)            
 print(eg.cube())
 
