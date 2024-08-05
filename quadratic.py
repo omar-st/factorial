@@ -23,6 +23,44 @@ class Quadratic:
         #Uses both the + and - of inner() to return both roots of the quadratic
         return (p, q)
         
+class Cubic:
+    #stores the values in the eq.
+    def __init__(self, a, b, c, d=0):
+        self.formula = f'{a}x^3 {b}x^2 {c}x {d} = 0'
+        self.a = a
+        self.b = b
+        self.c = c
+        self.d = d
+
+    def inner(self):
+        a, b, c, d = self.a, self.b, self.c, self.d
+        b /= a; c /= a; d /= a
+        return ( 
+            -((b**3) / (27*a**3)) 
+            + ((b*c) / (6*a**2)) 
+            - (d/(2*a)) 
+            )
+
+    def diff(self):
+        a, b, c = self.a, self.b, self.c
+        return (
+            c/(3*a) 
+            - (b**2)/(9*a**2)
+            )
+
+    def cube(self):
+        a, b, c, d = self.a, self.b, self.c, self.d
+        p, q = self.inner(), self.diff()
+        return (
+            (p - (p**2 + q**3)**0.5 )**(1/3)
+            + (p + (p**2 + q**3)**0.5 )**(1/3)
+            - b/(3*a)
+            )
+      
+eg = Cubic(1, -6, 11, -6)            
+print(eg.cube())
+
+
 #For example
 eg = Quadratic(3, 13, 12)
 print(eg.formula, '  equals  ', eg.quad())
