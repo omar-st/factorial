@@ -14,7 +14,7 @@ def fac(n):
         k *= i
     return k
 ```
-This function uses a simple loop to calculate the product of all integers from 1 to `n`. The result is returned as an integer.
+This function uses a loop to calculate the product of all integers from 1 to `n`. The result is returned as an integer.
 
 ## Function 2: `subset(n, k)`
 Computes the number of subsets with `k` elements from a set of `n` elements.
