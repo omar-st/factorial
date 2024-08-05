@@ -1,4 +1,4 @@
-#Solve all quadratic equations, returns both solutions as a tuple. Note: Sometimes the solutions are complex numbers.
+#Solve all quadratic equations, returns both solutions (roots) as a tuple. Note: Sometimes the roots are complex numbers.
 class Quadratic:
     #stores the values in the eq.
     def __init__(self, a, b, c=0):
@@ -6,9 +6,8 @@ class Quadratic:
         self.b = b
         self.c = c
         self.formula = f'{a}x^2 {b}x {c} = 0'
-        self.x = (0,0)
 
-    #The quadratic formula includes a section, sqrt(b^2 - 4ac), which is both added and subtracted, to return 2 solutions
+    #The quadratic formula includes a section, sqrt(b^2 - 4ac), inside of -b{}/2a, which is both added and subtracted, to return 2 solutions
     def inner(self):
         a, b, c = self.a, self.b, self.c
         return (b**2 - 4*a*c)**(1/2)
@@ -21,7 +20,7 @@ class Quadratic:
         a,b,c, calc,inner = self.a, self.b, self.c, self.calc, self.inner
         p = self.calc(self.inner())
         q = self.calc(-1*self.inner())
-        #Uses both the + and - of inner() to return 2 solutions
+        #Uses both the + and - of inner() to return both roots of the quadratic
         return (p, q)
         
 #For example
