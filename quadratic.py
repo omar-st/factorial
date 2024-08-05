@@ -24,6 +24,7 @@ class Quadratic:
         return (p, q)
         
 class Cubic:
+    #continue here to make it work for all cubics.
     #stores the values in the eq.
     def __init__(self, a, b, c, d=0):
         self.formula = f'{a}x^3 {b}x^2 {c}x {d} = 0'
@@ -62,7 +63,7 @@ class Cubic:
             )
         print(val)
         return val
-        
+
 eg = Cubic(1, -6, 11, -6)            
 print(eg.cube())
 
