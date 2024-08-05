@@ -13,7 +13,7 @@ This Python class `Quadratic` is designed to solve quadratic equations of the fo
 ### `calc(self, inner)`:
 * Uses the inner part to calculate one solution for the equation.
 ### `quad(self)`:
-* Calls both the `calc` twice, where `calc` is passed positive and negative values of in the inner formula, to return 2 solutions.
+* Calls `calc` twice, where `calc` is passed positive and negative values of in the inner formula, to return 2 solutions.
 
 ## Example Usage
 ```python
