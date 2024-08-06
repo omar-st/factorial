@@ -2,10 +2,10 @@
 class Quadratic:
     #stores the values in the eq.
     def __init__(self, a, b, c=0):
+        self.formula = f'{a}x^2 {b}x {c} = 0'
         self.a = a
         self.b = b
         self.c = c
-        self.formula = f'{a}x^2 {b}x {c} = 0'
 
     #The quadratic formula includes a section, sqrt(b^2 - 4ac), inside of -b{}/2a, which is both added and subtracted, to return 2 solutions
     def inner(self):

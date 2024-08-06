@@ -6,7 +6,7 @@ A Python class designed to calculate the length of sides in a right-angled trian
 ### Features
 * Calculates the length of any side (adjacent, opposite, or hypotenuse) given the other two sides.
 * You must pass two side lengths and a zero to the constructor for it to return the value of the missing side.
-* If you pass just two side lengths, it will assume the hypthenuse is the unknown.
+* If you pass just two side lengths, it will assume the hypotenuse is the unknown.
 
 ### Usage
 1. Create a new instance of the `RightTriangle` class by passing in the lengths of each known side, and zero for the unknown side.
