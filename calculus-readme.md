@@ -53,6 +53,7 @@ The `Angle` class is a Python class that uses Taylor series expansions to comput
 The `Angle` class has two key components:
 
 **Initialization**: The `__init__` method takes an input radius (r) which represents the size of the angle in radians. It also initializes a `taylor` object from the `Quantity` class to generate Taylor series expansions.
+
 **Sine and Cosine Methods**:
 * `sin` and `cos` These methods use the Taylor series expansion of sine and cosine to compute the said values of an input angle (r). It iterates over the first 16 terms of the series; adding, subtracting, or excluding each term depending on its parity.
 
