@@ -1,5 +1,3 @@
-#Calculus
-
 class Quantity:
     def __init__(self, coefficient=1, exponent=1):
         self.formula = f'{coefficient}x^{exponent}'
@@ -20,7 +18,7 @@ class Quantity:
             a /= n
         return (a, n)
 
-    def TaylorProgression(self, lim=10):
+    def TaylorProgression(self, lim=16):
         a, n = self.a, self.n
         progression = [(a,n)]
         for i in range(lim):
@@ -29,6 +27,13 @@ class Quantity:
             progression.append((a, n))
         return(progression)
 
+def euler(x):
+    s = Quantity()
+    t = s.TaylorProgression()
+    XbaseE = 1  #e^x starts at e^0=1, then adds every integral of x
+    for poly in t:
+        XbaseE += poly[0]*(x**poly[1])
+    return XbaseE
 
 class Angle():
     def __init__(self, r): #r = angle size in radians
@@ -42,12 +47,10 @@ class Angle():
         sine = 0  #sin starts at 0, then alternates +/- every odd power
         for i in range(5):
             poly = t[2*i]  #array starts at zero, so power 1 is at index 0
-            #print(poly)
             if i%2 == 0:
                 sine += poly[0]*(r**poly[1])
             else:
                 sine -= poly[0]*(r**poly[1])
-            #print(sine)
         return sine
 
     def cos(self):
@@ -55,7 +58,6 @@ class Angle():
         cosine = 1  #cos starts at, then alternates -/+ every even power
         for i in range(5):
             poly = t[2*i+1]  #array starts at zero, so power 2 is at index 1
-            #print(poly)
             if i%2 == 0:
                 cosine -= poly[0]*(r**poly[1])
             else:
@@ -69,6 +71,7 @@ print(q.dx(2))  #24x
 #integral example: 1st integral of 4x^3
 print(q.ix(1))  #x^4
 
+print(euler(3))  #e^3
 theta = Angle(1.25)
 print(theta.sin())  #sin of 1.25 radians
 print(theta.cos())  #cos of 1.25 radians
