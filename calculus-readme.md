@@ -27,7 +27,10 @@ print(q.dx(2))  # outputs (24, 1), representing the term 24x
 print(q.ix(1))  # outputs (4, 4), representing the term x^4
 ```
 ### Taylor Progression
-The taylor series is the sequence of values yielded by repeated integrations. In its most basic form, you can add the terms to yield other mathematical quantities. eg, adding every integral of x yields e^x; including only integrals with odd degree (exponent) and alternately adding and subtracting them yields sin(x), and doing the same with only integrals of even degree yields cos(x).
+The taylor series is the sequence of values yielded by repeated integrations. In its most basic form, you can add the terms to yield other mathematical quantities. eg,
+* adding every integral of x yields e^x; 
+* including only integrals with odd degree (exponent) and alternately adding and subtracting them yields sin(x);
+* and doing the same with only integrals of even degree yields cos(x).
 
 ***
 ## Euler Function
@@ -39,19 +42,19 @@ The Euler Function, defined in math as f(x) = e^x, where e is the base of the na
 
 ***
 ## Angle Class
-The `Angle` class is a Python implementation that uses Taylor series expansions to compute sine and cosine values of any angle given in radians. The class builds upon the `Quantity` class above, which handles polynomial expressions and derivatives/integrals.
+The `Angle` class is a Python class that uses Taylor series expansions to compute sine and cosine values of any angle given in radians. The class builds upon the `Quantity` class above, which handles polynomial expressions and derivatives/integrals.
 
 ### Features:
-* Uses Taylor series expansions up to 10th order for both sine and cosine functions
+* Uses Taylor series expansions up to 16th order for both sine and cosine functions
 * Accepts an input angle in radians as a float or int value
 * Provides methods to compute sin and cos values of the input angle
 
 ### Source Explanation
 The `Angle` class has two key components:
 
-1. **Initialization**: The `__init__` method takes an input radius (r) which represents the size of the angle in radians. It also initializes a `taylor` object from the `Quantity` class to generate Taylor series expansions.
-2. **Sine and Cosine Methods**:
-	* `sin` and `cos` These methods use the Taylor series expansion of sine and cosine to compute the said values of an input angle (r). It iterates over the first 16 terms of the series; adding, subtracting, or excluding each term depending on its parity.
+**Initialization**: The `__init__` method takes an input radius (r) which represents the size of the angle in radians. It also initializes a `taylor` object from the `Quantity` class to generate Taylor series expansions.
+**Sine and Cosine Methods**:
+* `sin` and `cos` These methods use the Taylor series expansion of sine and cosine to compute the said values of an input angle (r). It iterates over the first 16 terms of the series; adding, subtracting, or excluding each term depending on its parity.
 
 **Example Usage:**
 ```python
